@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- 这句不要动,表示xml的版本,以及读取的编码 -->
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.rainbowsea.mapper.UserMapper">
+    <select id="selectAll" resultType="com.rainbowsea.bean.User">
+        select id, name, age, email
+        from user
+    </select>
+</mapper>

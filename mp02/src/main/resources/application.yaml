@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatisplus?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
+    username: root
+    password: MySQL123
+
+
+
+
+  main:
+    banner-mode: off  # \u5173\u95ED Spring Boot \u7684\u56FE\u793A\u663E\u793A
+
+
+
+
+
+mybatis-plus:
+  global-config:
+    banner: false  # \u5173\u95ED mybaits-plus \u7684\u56FE\u793A\u663E\u793A
+    db-config:
+      table-prefix: rainbowsea_ # 还可以通过统一添加前缀的方式：
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # \u6253\u5370\u663E\u793A\u65E5\u5FD7
+    map-underscore-to-camel-case: true # 开启驼峰，下划线映射规则
