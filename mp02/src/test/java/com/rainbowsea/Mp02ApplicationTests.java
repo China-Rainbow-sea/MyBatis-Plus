@@ -16,17 +16,124 @@ import java.util.List;
 class Mp02ApplicationTests {
 
     @Resource
-    private JdbcTemplate jdbcTemplate;
+    private UserMapper userMapper;
 
+
+    // 测试自定义方法
     @Test
-    void contextLoads() {
-        System.out.println(jdbcTemplate.getDataSource().getClass());
+    void myMethod() {
+        User tom = userMapper.selectByName("Lihua");
+        System.out.println(tom);
+    }
+
+
+
+    @Autowired
+    private UserService userService;
+
+
+
+    // UserService 查询
+    @Test
+    void selectService() {
+        List<User> users = userService.selectAll();
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
+
+
+
+    // userService 修改
+    @Test
+    void updateService() {
+        User user = new User();
+        user.setId(3L);
+        user.setAge(22);
+
+        userService.updateById(user);
+    }
+
+
+
+
+    // UserService 删除
+    @Test
+    void deleteServie() {
+        userService.removeById(2L);
+    }
+
+
+    //  UserService 添加
+    @Test
+    void insertService() {
+        User user = new User();
+        user.setId(7L);
+        user.setAge(18);
+        user.setName("Tom");
+        user.setEmail("Tom@baomidou.com");
+
+        userService.save(user);
 
     }
 
 
-    @Resource
-    private UserMapper userMapper;
+
+
+
+
+
+
+
+
+
+
+
+
+    // 简单查询
+    @Test
+    void selectById() {
+        User user = userMapper.selectById(6L);
+        System.out.println(user);
+    }
+
+
+
+    // 简单更新
+    @Test
+    void updateById() {
+        User user = new User();
+        user.setId(2L);
+        user.setAge(18);
+        user.setName("李华");
+        user.setEmail("lihua@baomidou.com");
+
+        userMapper.updateById(user);
+    }
+
+
+    // 简单删除
+    @Test
+    void deleteOne() {
+        userMapper.deleteById(4L);
+
+    }
+
+
+
+
+    // 简单添加
+    @Test
+    void insert() {
+
+        User user = new User();
+        user.setId(6L);
+        user.setAge(18);
+        user.setName("Lihua");
+        user.setEmail("test6@baomidou.com");
+        userMapper.insert(user);
+    }
+
 
 
     // 查询所有
@@ -41,103 +148,27 @@ class Mp02ApplicationTests {
 
 
 
-    // 简单添加
-/*
-    @Test
-    void insert() {
-
-        User user = new User();
-        user.setId(6L);
-        user.setAge(18);
-        user.setName("Lihua");
-        user.setEmail("test6@baomidou.com");
-        userMapper.insert(user);
-    }
-*/
-
-    // 简单删除
-    @Test
-    void deleteOne() {
-        userMapper.deleteById(4L);
-
-    }
 
 
-    // 简单更新
-  /*  @Test
-    void updateById() {
-        User user = new User();
-        user.setId(2L);
-        user.setAge(18);
-        user.setName("李华");
-        user.setEmail("lihua@baomidou.com");
 
-        userMapper.updateById(user);
-    }*/
-
-
-    // 简单查询
-    @Test
-    void selectById() {
-        User user = userMapper.selectById(6L);
-        System.out.println(user);
-    }
 
 
     //////////////////////////////////////////////
     //////////////////////////////////////////////
     //////////////////////////////////////////////
 
-    @Autowired
-    private UserService userService;
 
 
-    //  UserService 添加
-/*    @Test
-    void insertService() {
-        User user = new User();
-        user.setId(7L);
-        user.setAge(18);
-        user.setName("Tom");
-        user.setEmail("Tom@baomidou.com");
-
-        userService.save(user);
-
-    }*/
 
 
-    // UserService 删除
+
+    @Resource
+    private JdbcTemplate jdbcTemplate;
+
     @Test
-    void deleteServie() {
-        userService.removeById(2L);
+    void contextLoads() {
+        System.out.println(jdbcTemplate.getDataSource().getClass());
+
     }
 
-
-    // userService 修改
-    @Test
-    void updateService() {
-        User user = new User();
-        user.setId(3L);
-        user.setAge(22);
-
-        userService.updateById(user);
-    }
-
-
-    // UserService 查询
-    @Test
-    void selectService() {
-        List<User> users = userService.selectAll();
-        for (User user : users) {
-            System.out.println(user);
-        }
-    }
-
-
-    // 测试自定义方法
-    @Test
-    void myMethod() {
-        User tom = userMapper.selectByName("Lihua");
-        System.out.println(tom);
-    }
 }

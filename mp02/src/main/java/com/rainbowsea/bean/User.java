@@ -1,6 +1,5 @@
 package com.rainbowsea.bean;
 
-
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -10,24 +9,23 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@TableName("rainbowsea_user")  // 指定映射的数据表名是哪一个
-//@TableName("user")  // 指定映射的数据表名是哪一个
+
+//@TableName(value = "rainbowsea_user")  // 指明该实体类映射的是那张数据表
+//@TableName(value = "user")
 public class User {
 
     private Long id;
-
-    @TableField("username")  // 表示使用别名的方式了 as 查询时（数据表与Java bean 对象当中的属性不一致时使用）
+    @TableField(value = "username")
     private String name;
 
-    @TableField(select = false) // 表示查询时，不查该属性名/该字段
+    @TableField(select = false)  // 查询时，不对age 字段进行查询
     private Integer age;
     private String email;
 
-    @TableField("`desc`")   // 表示区别别名，关键字
+    @TableField(value = "`desc`") // 注意：有两层，但最里面的哪个不是引号
     private String desc;
 
 
-    @TableField(exist = false)  // Unknown column 'online' in 'field list' 表示该属性不存在，于数据表中，不要查询，赋值
+    @TableField(exist = false)  // 表示，不让该 online 属性，作为 SQL语句当中的查询字段
     private Integer online;
-
 }

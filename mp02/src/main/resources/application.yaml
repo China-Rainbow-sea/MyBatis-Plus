@@ -4,23 +4,16 @@ spring:
     url: jdbc:mysql://localhost:3306/mybatisplus?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
     username: root
     password: MySQL123
-
-
-
-
   main:
-    banner-mode: off  # \u5173\u95ED Spring Boot \u7684\u56FE\u793A\u663E\u793A
-
-
-
+    banner-mode: off  #关闭 spring boot  在命令行当中的图标显示
 
 
 mybatis-plus:
   global-config:
-    banner: false  # \u5173\u95ED mybaits-plus \u7684\u56FE\u793A\u663E\u793A
+    banner: false  # 关闭 mybatis-plus 在命令行当中的图标显示
     db-config:
       table-prefix: rainbowsea_ # 还可以通过统一添加前缀的方式：
 
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # \u6253\u5370\u663E\u793A\u65E5\u5FD7
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 开启 Log 日志信息打印
     map-underscore-to-camel-case: true # 开启驼峰，下划线映射规则
