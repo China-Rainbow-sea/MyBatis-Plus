@@ -1,11 +1,11 @@
 package com.rainbowsea.bean;
 
+
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.context.annotation.Bean;
 
 @Data
 @NoArgsConstructor
@@ -16,10 +16,10 @@ import org.springframework.context.annotation.Bean;
 public class User {
 
     private Long id;
-    @TableField(value = "username")
+    //@TableField(value = "username")
     private String name;
 
-    @TableField(select = false)  // 查询时，不对age 字段进行查询
+    //@TableField(select = false)  // 查询时，不对age 字段进行查询
     private Integer age;
     private String email;
 
@@ -27,6 +27,14 @@ public class User {
     private String desc;
 
 
-    @TableField(exist = false)  // 表示，不让该 online 属性，作为 SQL语句当中的查询字段
+    @TableField(exist = false)  // 表示// ，不让该 online 属性，作为 SQL语句当中的查询字段
     private Integer online;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

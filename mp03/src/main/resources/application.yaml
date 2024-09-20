@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatisplus?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
+    username: root
+    password: MySQL123
+  main:
+    banner-mode: off  #\u5173\u95ED spring boot  \u5728\u547D\u4EE4\u884C\u5F53\u4E2D\u7684\u56FE\u6807\u663E\u793A
+
+
+mybatis-plus:
+  global-config:
+    banner: false  # \u5173\u95ED mybatis-plus \u5728\u547D\u4EE4\u884C\u5F53\u4E2D\u7684\u56FE\u6807\u663E\u793A
+    db-config:
+      table-prefix: rainbowsea_ # \u8FD8\u53EF\u4EE5\u901A\u8FC7\u7EDF\u4E00\u6DFB\u52A0\u524D\u7F00\u7684\u65B9\u5F0F\uFF1A
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # \u5F00\u542F Log \u65E5\u5FD7\u4FE1\u606F\u6253\u5370
+    map-underscore-to-camel-case: true # \u5F00\u542F\u9A7C\u5CF0\uFF0C\u4E0B\u5212\u7EBF\u6620\u5C04\u89C4\u5219
