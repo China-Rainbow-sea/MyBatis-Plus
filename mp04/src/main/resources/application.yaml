@@ -1,0 +1,31 @@
+spring:
+  datasource:
+#    driver-class-name: com.mysql.cj.
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://localhost:3306/mybatisplus?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false
+#    url: jdbc:mysql://localhost:3306/mybatisplus?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false
+    username: root
+    password: MySQL123
+  main:
+    banner-mode: off  #关闭 spring boot  在命令行当中的图标显示
+
+
+mybatis-plus:
+  global-config:
+    banner: false  # 关闭 mybatis-plus 在命令行当中的图标显示
+    db-config:
+      table-prefix: rainbowsea_ # 还可以通过统一添加前缀的方式：
+      logic-delete-value: 1
+      logic-delete-field: status
+      logic-not-delete-value: 0
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 开启 Log 日志信息打印
+    map-underscore-to-camel-case: true # 开启驼峰，下划线映射规则
+
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: error  ###可以是info或者error

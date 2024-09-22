@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.rainbowsea</groupId>
-    <artifactId>mp03</artifactId>
+    <artifactId>mp04</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mp03</name>
-    <description>mp03</description>
+    <name>mp04</name>
+    <description>mp04</description>
     <url/>
     <licenses>
         <license/>
@@ -27,7 +27,7 @@
         <url/>
     </scm>
     <properties>
-        <java.version>8</java.version>
+        <java.version>1.8</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -53,14 +53,12 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-
-
-
         <!--        lombok 的依赖-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+
 
         <!--        druid-->
         <dependency>
@@ -69,12 +67,30 @@
             <version>1.2.8</version>
         </dependency>
 
+
         <!--        mybatis-plus 的依赖-->
+
+        <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.4.3</version>
         </dependency>
+
+
+<!--        map 转为 json,json 转为 map-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.76</version>
+        </dependency>
+
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>3.9.1</version>
+        </dependency>
+
 
     </dependencies>
 

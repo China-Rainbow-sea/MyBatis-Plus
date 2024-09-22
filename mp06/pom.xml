@@ -6,13 +6,14 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.5.3</version>
+
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.rainbowsea</groupId>
-    <artifactId>mp03</artifactId>
+    <artifactId>mp06</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mp03</name>
-    <description>mp03</description>
+    <name>mp06</name>
+    <description>mp06</description>
     <url/>
     <licenses>
         <license/>
@@ -27,7 +28,7 @@
         <url/>
     </scm>
     <properties>
-        <java.version>8</java.version>
+        <java.version>1.8</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -41,20 +42,19 @@
             <scope>test</scope>
         </dependency>
 
+
         <!--        spring boot web 依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+
         <!--        mysql 驱动依赖-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-
-
-
 
         <!--        lombok 的依赖-->
         <dependency>
@@ -75,6 +75,14 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.4.3</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+
 
     </dependencies>
 
