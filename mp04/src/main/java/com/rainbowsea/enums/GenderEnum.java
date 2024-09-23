@@ -16,4 +16,7 @@ public enum GenderEnum {
         this.gender = gender;
         this.genderName = genderName;
     }
+
+    GenderEnum() {
+    }
 }

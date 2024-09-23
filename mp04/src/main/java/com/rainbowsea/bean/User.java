@@ -31,22 +31,19 @@ public class User extends Model<User> {
     private Integer age;
     private String email;
 
-
-
-
-
-
-
     @TableLogic(value = "1", delval = "0")  // 标注删除状态
     private Integer status;
-
     private GenderEnum gender;
+
+    @TableField(typeHandler = FastjsonTypeHandler.class)//指定字段类型处理器
+    private Map<String, String> contact;  // 联系方式
+
+
 
     private Integer test;
 
 
-    @TableField(typeHandler = FastjsonTypeHandler.class)//指定字段类型处理器
-    private Map<String, String> contact;  // 联系方式
+
 
 
     @TableField(fill = FieldFill.INSERT)

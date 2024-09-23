@@ -17,8 +17,10 @@ public class LogicTest {
     private UserMapper userMapper;
 
     @Test
-    void logicDelete() {
-        userMapper.deleteById("6");
+    void selectById() {
+        User user = new User();
+        User selectUser = user.selectById("3");
+        System.out.println(selectUser);
     }
 
 
@@ -29,4 +31,14 @@ public class LogicTest {
         List<User> users = userMapper.selectList(lambdaQueryWrapper);
         System.out.println(users);
     }
+
+
+    @Test
+    void logicDelete() {
+        userMapper.deleteById("3");
+    }
+
+
+
+
 }

@@ -12,15 +12,19 @@ import java.util.List;
 
 @SpringBootTest
 public class TypeHandLerTest {
-
-
     @Autowired
     private UserMapper userMapper;
 
     @Test
+    void typeHandlerSelect() {
+        List<User> users = userMapper.selectList(null);
+        System.out.println(users);
+    }
+
+    @Test
     void typeHandler() {
         User user = new User();
-        user.setName("zhang");
+        user.setName("zhang3");
         user.setAge(28);
         user.setEmail("zhang@powernode.com");
         user.setStatus(1);
@@ -30,13 +34,8 @@ public class TypeHandLerTest {
         user.setContact(contact);
 
         userMapper.insert(user);
-
-
     }
 
-    @Test
-    void typeHandlerSelect() {
-        List<User> users = userMapper.selectList(null);
-        System.out.println(users);
-    }
+
+
 }
