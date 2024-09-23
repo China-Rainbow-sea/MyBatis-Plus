@@ -31,4 +31,21 @@ public class enumTest {
 
 
     }
+
+
+    @Test
+    void enumTest2() {
+        User user = new User();
+        user.setName("xiaoming");
+        user.setAge(18);
+        user.setEmail("lihua@rainbowsea.com");
+        user.setStatus(1);
+        user.setGender(GenderEnum.MAN);
+        System.out.println(GenderEnum.WOMAN);
+
+        userMapper.insert(user);
+
+
+
+    }
 }
