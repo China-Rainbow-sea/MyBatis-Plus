@@ -2,7 +2,6 @@ package com.rainbowsea;
 
 
 import com.rainbowsea.bean.User;
-import com.rainbowsea.enums.GenderEnum;
 import com.rainbowsea.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,22 +15,10 @@ public class FillTest {
 
 
     @Test
-    void testFillInsert() {
-        User user = new User();
-        user.setName("LiHu");
-        user.setAge(18);
-        user.setEmail("lihua@rainbowsea.com");
-        user.setStatus(1);
-
-        userMapper.insert(user);
-    }
-
-
-    @Test
     void testFillUpdate() {
         //1837826196875464706
         User user = new User();
-        user.setName("wangwu");
+        user.setName("LiHu666");
         user.setId("1837826196875464706");
         user.setAge(18);
         user.setEmail("lihua@rainbowsea.com");
@@ -40,4 +27,18 @@ public class FillTest {
         userMapper.updateById(user);
 
     }
+
+
+    @Test
+    void testFillInsert() {
+        User user = new User();
+        user.setName("LiHu666");
+        user.setAge(18);
+        user.setEmail("lihua@rainbowsea.com");
+        user.setStatus(1);
+
+        userMapper.insert(user);
+    }
+
+
 }

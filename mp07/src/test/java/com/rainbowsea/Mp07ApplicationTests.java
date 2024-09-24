@@ -11,23 +11,8 @@ import javax.annotation.Resource;
 @SpringBootTest
 class Mp07ApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
-
-
-
-    @Resource
-    private UserServiceImpl userService;
-
     @Resource
     private UserServiceImpl2 userService2;
-
-    @Test
-    public void select1() {
-        User user = userService.getById(1L);
-        System.out.println(user);
-    }
 
     @Test
     public void select2() {
@@ -35,6 +20,21 @@ class Mp07ApplicationTests {
         System.out.println(user);
 
     }
+
+
+
+
+    @Resource
+    private UserServiceImpl userService;
+
+    @Test
+    public void select1() {
+        User user = userService.getById(1L);
+        System.out.println(user);
+    }
+
+
+
 
 
 }

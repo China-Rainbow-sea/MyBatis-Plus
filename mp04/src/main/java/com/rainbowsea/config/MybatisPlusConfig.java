@@ -25,6 +25,7 @@ public class MybatisPlusConfig {
         体涩会给你从的分页语句也会不同，这里我们指定数据库为 MySQL数据库
          */
         mybatisPlusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
+        mybatisPlusInterceptor.addInnerInterceptor(new OptimisticLockerInnerInterceptor()); // 乐观锁
         return mybatisPlusInterceptor;
     }
 
@@ -43,7 +44,7 @@ public class MybatisPlusConfig {
 
         mybatisPlusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
         mybatisPlusInterceptor.addInnerInterceptor(new BlockAttackInnerInterceptor());
-        mybatisPlusInterceptor.addInnerInterceptor(new OptimisticLockerInnerInterceptor());
+
         return mybatisPlusInterceptor;
     }
 
